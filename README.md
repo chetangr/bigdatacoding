@@ -1,2 +1,2 @@
 # bigdatacoding
-Code for big data using pyspark and  snowpark including interview coding questions
+Code for big data using pyspark, snowpark, SQL including interview coding questions

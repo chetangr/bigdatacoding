@@ -2,8 +2,8 @@
 Code for big data using pyspark, snowpark, SQL including interview coding questions
 
 SHORTCUTS:
-|**USECASE**|**Python**|**Pyspark**|**Scala**|**SQL/SPARK-SQL**|**Julia**|
-|-------------|:-------------:|:-----:|:-----:|:-----:|-----:|
+|**USECASE**|**Python**|**Pyspark**|**Scala**|**SQL/SPARK-SQL**|**SNOWPARK**|**Julia**|
+|-------------|:-------------:|:-----:|:-----:|:-----:|:-----:|-----:|
 | `Get column names` | [Python](https://github.com/chetangr/cheats/blob/6b675e87e7dc7d8c0cc2121d7726905f9390b38a/python/pandas.py#L10)| $1600 |500|500|500|
 | `Rename columns` | centered      |   $12 |60|500||500|
 | `GROUP BY` | are neat      |    $1 |25|500|500|

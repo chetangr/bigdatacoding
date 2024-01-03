@@ -14,8 +14,8 @@ SHORTCUTS:
 |`LEFT PART OF A STRING COLUMN IN NEW COLUMN OF DATAFRAME`| Python | Pyspark | [Koalas](https://github.com/chetangr/cheats/blob/f5ec5571520dfa6aa706f81977a9963d5041e2e1/spark/koalas.py#L28) | SQL | Julia
 
 INTERVIEW QUESTIONS:
-|**QUESTION**|**COMPANY**|**DIFFICULTY**|**Python**|**Pyspark**|**Scala**|**SQL/SPARK-SQL**|**Julia**|
-|-------------|:-------------:|:-----:|:-----:|:-----:|:-----:|:-----:|-----:|
+|**QUESTION**|**COMPANY**|**DIFFICULTY**|**Python**|**Pyspark**|**SNOWPARK**|**Scala**|**SQL/SPARK-SQL**|**Julia**|
+|-------------|:-------------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|-----:|
 | `Get column names` | [Python](https://github.com/chetangr/cheats/blob/6b675e87e7dc7d8c0cc2121d7726905f9390b38a/python/pandas.py#L10)| $1600 |500|500|500|
 | `Rename columns` | centered      |   $12 |60|500||500|
 | `GROUP BY` | are neat      |    $1 |25|500|500|

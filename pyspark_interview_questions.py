@@ -1,4 +1,11 @@
 # Databricks notebook source
+# IMPORTS
+from pyspark.sql import SparkSession
+from pyspark.sql.window import Window
+import pyspark.sql.functions as F
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC 1) Imagine a student's test scores dataset, and you want to understand the relative performance of each student compared to others. This is where the PySpark PERCENT_RANK function comes into play.
 # MAGIC
@@ -8,9 +15,7 @@
 
 # COMMAND ----------
 
-from pyspark.sql import SparkSession
-from pyspark.sql.window import Window
-import pyspark.sql.functions as F
+
 spark = SparkSession.builder.appName("PercentRankFunctionExample").getOrCreate()
 
 # Sample student data
@@ -28,7 +33,53 @@ df_with_percent_rank.show(truncate=False)
 
 # COMMAND ----------
 
+# MAGIC %md
+# MAGIC 2)TIGERANALYTICS INTERVIEW QUESTION
+# MAGIC
+# MAGIC Convert
+# MAGIC Name, Sub, Marks
+# MAGIC ('Rudra','math',79),
+# MAGIC ('Rudra','eng',60),
+# MAGIC ('Shivu','math', 68),
+# MAGIC ('Shivu','eng', 59),
+# MAGIC ('Anu','math', 65),
+# MAGIC ('Anu','eng',80)
+# MAGIC
+# MAGIC to 
+# MAGIC Name, math, eng
+# MAGIC ('Rudra',79,60),
+# MAGIC ('Shivu', 68, 59),
+# MAGIC ('Anu',65, 80)
+# MAGIC
+# MAGIC data=[
+# MAGIC ('Rudra','math',79),
+# MAGIC ('Rudra','eng',60),
+# MAGIC ('Shivu','math', 68),
+# MAGIC ('Shivu','eng', 59),
+# MAGIC ('Anu','math', 65),
+# MAGIC ('Anu','eng',80)
+# MAGIC ]
+# MAGIC schema="Name string,Sub string,Marks int"
+# MAGIC df=spark.createDataFrame(data,schema)
+# MAGIC df.show()
+
+# COMMAND ----------
+
+data=[
+('Rudra','math',79),
+('Rudra','eng',60),
+('Shivu','math', 68),
+('Shivu','eng', 59),
+('Anu','eng',80),
+('Anu','math', 65)
+]
+schema="Name string,Sub string,Marks int"
+df=spark.createDataFrame(data,schema)
 df.show()
+
+# COMMAND ----------
+
+df.groupBy(F.col("Name")).pivot("Sub",["math","eng"]).agg(F.first(df.Marks)).show()
 
 # COMMAND ----------
 
